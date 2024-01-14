@@ -9,7 +9,6 @@ import { useCartContext } from "./Context/CartContext";
 
 const ProductDetail = () =>{
     const {addToCart} = useCartContext();
-
     const {id} = useParams();
     console.log(id);
     const [singlePage, setSinglePage] = useState(API);
@@ -51,7 +50,7 @@ const ProductDetail = () =>{
                 <input className="number-input" type="number" placeholder="1" min="1" max="10"/>
                 <div className="product-button">
                 <NavLink to="/addtocart">
-                    <button onClick={() => addToCart( image, title, price ,id)}>ADD TO CART</button>
+                    <button onClick={() => addToCart(image, title, price ,id)}>ADD TO CART</button>
                      
                 </NavLink>
                     

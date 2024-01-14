@@ -11,9 +11,9 @@ const AddToCart = () => {
   const [checkCart, setCheckCart] = useState("Cart is Empty");
 
   const [item, setItem] = useState();
-  //  console.log(cart);
+   console.log(cart);
 
-  if (cart.length == 0) {
+  if (cart.length === 0) {
     return (
       <div className="cart-message">
         <h1>Cart is Empty</h1>

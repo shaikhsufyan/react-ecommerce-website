@@ -1,7 +1,9 @@
 const cartReducer = (state, action) => {
-  if (action.type == "ADD_TO_CART") {
+  if (action.type === "ADD_TO_CART") {
+    console.log("ssss");
+    console.log(state);
+
     let { image, title, price, id } = action.payload;
-    // console.log(image[0].url,title, price)
     let cartProducts = {
       data: image[0].url,
       title,
@@ -15,6 +17,7 @@ const cartReducer = (state, action) => {
     };
   }
 
+ 
   if (action.type == "REMOVE_TO_CART") {
     let updateCart = state.cart.filter((curItem) => curItem.id !== action.payload
     );

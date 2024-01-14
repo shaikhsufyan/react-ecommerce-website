@@ -15,9 +15,7 @@ let localDatas = () => {
 const initialState = {
   // cart:[],
   cart: localDatas(),
-  total_item: "",
-  total_amount: "",
-  shiping_fee: "",
+ 
 };
 
 const CartProvider = ({ children }) => {
@@ -30,6 +28,7 @@ const CartProvider = ({ children }) => {
     dispatch({ type: "REMOVE_TO_CART", payload: id });
   };
 
+ 
   // clear cart
   const clearBtn = () => {
     dispatch({ type: "CLEAR_CART" });
@@ -37,8 +36,9 @@ const CartProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem("localCart", JSON.stringify(state.cart));
+     
   }, [state.cart]);
-
+   
   return (
     <cartContext.Provider value={{ ...state, addToCart, deleted, clearBtn }}>
       {children}
